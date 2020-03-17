@@ -1,0 +1,18 @@
+//Bootloader compilation
+nasm bootloader.asm -f bin -o boot.bin
+
+//copy boot.bin to IMAGe file starting from 0x0
+
+//Kernel.c and intermedite.asm combination...
+gcc -ffreestanding -c Kernel.c -o kernel.o
+nasm -felf32 intermediate.asm
+ld -T NUL -o kernel.tmp -Ttext 0x8000  intermediate.o kernel.o
+objcopy -O binary -j .text kernel.tmp kernel.bin
+
+//copy kernel.bin starting from 0x200 to IMA file
+
+
+//Kernel.c to bin
+gcc -ffreestanding -c -o kernel.o Kernel.c
+ld -T NUL -o kernel.tmp -Ttext 0x8000 kernel.o
+objcopy -O binary -j .text kernel.tmp kernel.bin
