@@ -17,3 +17,5 @@ Tools :
   - GNU ld (GNU Binutils) 2.25.1
   - GNU objcopy (GNU Binutils) 2.25.1
   - objconv: Object file converter version 2.51 for x86 and x86-64
+  - WinImage 9.00
+  - WMLite 3.2.6
