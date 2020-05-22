@@ -1,4 +1,4 @@
-extern portu_oku(int port);
+extern int portu_oku(int port);
 struct Point
 {
 int x, y;
